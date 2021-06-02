@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>collector system monitoring battery</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <style>
+body{
+				background-color:#FAEBD7;
+			}	
+    html {
+     font-family: Times New Roman;
+     display: inline-block;
+     margin: 0px auto;
+     text-align: center;
+    }
+    h1 { font-size: 3.0rem; color: #DEB887; }
+    p { font-size: 3.0rem; }
+    .units { font-size: 1.2rem;color: black; }
+    {
+      font-size: 1.5rem;
+      vertical-align:middle;
+      padding-bottom: 15px;
+    }
+			table {
+				border-collapse: collapse;
+				width: 100%;
+				color: #1f5380;
+				font-family: monospace;
+				font-size: 20px;
+				text-align: center;
+			} 
+			th {
+				background-color: #e6ab93 ;
+				color:#FAEBD7;
+			}
+			
+	
+  </style>
+</head>
+<body>
+  <h1>Collector System Monitoring Battery ESP32</h1>
+ <table border="1">
+<tr>
+		<th>
+<p>
+    <i class="fas fa-thermometer-half" style="color:black;"></i> 
+    <span class= >Temperature = </span> 
+    <span id="Temperature">%Temperature%</span>
+    <sup class="units">°C</sup>
+</p>
+</th>
+		</tr>
+
+<tr>
+		<th>
+<p>
+    <i class="fas fa-bolt" style="color:black;"></i> 
+    <span class= >Voltage = </span> 
+    <span id="Voltage">%Voltage%</span>
+    <sup class="units">volt</sup>
+</p>
+</th>
+		</tr>
+
+<tr>
+		<th>
+<p>
+    <i class="fab fa-creative-commons-sampling" style="color:black;"></i> 
+    <span class= >Current = </span> 
+    <span id="Current">%Current%</span>
+    <sup class="units">amp</sup>
+</p>
+</th>
+		</tr>
+<!-- Menampilkan Jam (Aktif) -->
+
+		<tr>
+		<th>
+	<div id="clock"></div>
+		<script type="text/javascript">
+		<!--
+		function showTime() {
+		    var a_p = "";
+		    var today = new Date();
+		    var curr_hour = today.getHours();
+		    var curr_minute = today.getMinutes();
+		    var curr_second = today.getSeconds();
+		    if (curr_hour < 12) {
+		        a_p = "AM";
+		    } else {
+		        a_p = "PM";
+		    }
+		    if (curr_hour == 0) {
+		        curr_hour = 12;
+		    }
+		    if (curr_hour > 12) {
+		        curr_hour = curr_hour - 12;
+		    }
+		    curr_hour = checkTime(curr_hour);
+		    curr_minute = checkTime(curr_minute);
+		    curr_second = checkTime(curr_second);
+		 document.getElementById('clock').innerHTML=curr_hour + ":" + curr_minute + ":" + curr_second + " " + a_p;
+		    }
+
+		function checkTime(i) {
+		    if (i < 10) {
+		        i = "0" + i;
+		    }
+		    return i;
+		}
+		setInterval(showTime, 500);
+		//-->
+		</script>
+		</th>
+		</tr>
+
+		<tr> 
+		<th>
+		<!-- Menampilkan Hari, Bulan dan Tahun -->
+		<br>
+		<script type='text/javascript'>
+			<!--
+			var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+			var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+			var date = new Date();
+			var day = date.getDate();
+			var month = date.getMonth();
+			var thisDay = date.getDay(),
+			    thisDay = myDays[thisDay];
+			var yy = date.getYear();
+			var year = (yy < 1000) ? yy + 1900 : yy;
+			document.write(thisDay + ', ' + day + ' ' + months[month] + ' ' + year);
+			//-->
+		</script>
+
+		</th>
+		</tr>
+
+</body> 
+</html>
+
+<script> 
+setInterval(function ( ) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("Temperature").innerHTML = this.responseText;
+ }
+  };
+  xhttp.open("GET", "/Temperature", true);
+  xhttp.send();
+}, 1000 ) ;
+
+
+setInterval(function ( ) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("Voltage").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/Voltage", true);
+  xhttp.send();
+}, 1000 ) ;
+
+setInterval(function ( ) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("Current").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/Current", true);
+  xhttp.send();
+}, 1000 ) ;
+
+</script>

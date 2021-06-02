@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<!--
+	Snapshot by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<link rel="shortcut icon" href="hariff.png" type="image/png" />
+<html>
+	<head>
+		<title>Molisa Bakti</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="main.css" />
+	</head>
+	<body>
+		<div class="page-wrap">
+
+		
+			<!-- Main -->
+				<section id="main">
+
+					<!-- Header -->
+						<header id="header">
+							<div>Molisa <span>BAKTI</span></div>
+						</header>
+
+					<!-- Gallery -->
+						<section id="galleries">
+
+							<!-- Photo Galleries -->
+								<div class="gallery">
+
+									<!-- Filters -->
+										<header>
+											<h1>Battery Monitoring</h1>
+											<ul class="tabs">
+												<li><a href="#" data-tag="all" class="button active">All</a></li>
+											</ul>
+										</header>
+										<div>
+										<div>
+												<table>
+												
+												 
+												  <tfoot>
+													<tr>
+														<td> </td>
+														<td> </td>
+														<td> </td>
+														<td> </td>
+													</tr>
+												  </tfoot>
+												</table>
+										</div>
+											<div class="media all di">
+												<table>
+												   <thead>
+													<tr>
+														<th>  </th>
+														<th> Value </th>
+										
+													</tr>
+												  </thead>
+												  <tbody>
+													<tr>
+														<td> Teg1 </td>
+														<td><span id="DI1"></span></td>
+													</tr>
+													<tr>
+														<td> Digital Input - 2 </td>
+														<td><span id="DI2"></span></td>
+													</tr>
+													<tr>
+														<td> Digital Input - 3 </td>
+														<td><span id="DI3"></span></td>
+													</tr>
+													
+												  </tbody>
+												  <tfoot>
+													<tr>
+														<td> </td>
+														<td> </td>
+													</tr>
+												  </tfoot>
+												</table>
+											</div>
+										</div>
+								</div>
+						</section>
+
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="copyright">
+								&copy; Molisa Design: <a href="www.hariff.com">Hariff</a>. 2019
+							</div>
+						</footer>
+				</section>
+		</div>
+<script>
+				setInterval(function ( ) {
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("ADCValue").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readADC", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("ADCValue2").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readADC2", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("ADCValue3").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readADC3", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("ADCValue4").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readADC4", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("ADCValue5").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readADC5", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("ADCValue6").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readADC6", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("ADCValue7").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readADC7", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("ADCValue8").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readADC8", true);
+		xhttp.send();
+		
+				var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DI1").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readDO1", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DI2").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readDO2", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DI3").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readDO3", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DI4").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readDO4", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DI5").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readDO5", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DI6").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readDO6", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DI7").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readDO7", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DI8").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/readDO8", true);
+		xhttp.send();	
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("SiteID").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/Site", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("IPaddr").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/IPaddr", true);
+		xhttp.send();	
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("Subnet").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/Subnet", true);
+		xhttp.send();
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("SiteAddr").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "/SiteAddr", true);
+		xhttp.send();		
+		}, 2000 ) ;
+		</script>
+	</body>
+</html>
